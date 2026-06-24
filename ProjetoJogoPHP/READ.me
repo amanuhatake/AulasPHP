@@ -1,0 +1,111 @@
+# 🎮 Sistema CRUD de Jogos
+
+Atividade Extraclasse desenvolvida para a disciplina de **Desenvolvimento de Software**.
+
+- **Professora:** Juliana  
+- **Curso:** Análise e Desenvolvimento de Sistemas  
+
+---
+
+## 📋 Sobre o Projeto
+
+Sistema web desenvolvido em **PHP** com arquitetura **MVC** para gerenciamento de jogos. Permite cadastrar, listar, editar e excluir jogos de um banco de dados MySQL.
+
+---
+
+## 🗂️ Estrutura do Projeto
+
+```
+ProjetoJogoPHP/
+│
+├── index.php                    ← Ponto de entrada da aplicação
+├── banco.sql                    ← Script para criação do banco de dados
+│
+├── config/
+│   └── Database.php             ← Classe de conexão com o banco via PDO
+│
+├── models/
+│   └── Jogo.php                 ← Model com as operações SQL (CRUD)
+│
+├── controllers/
+│   └── JogoController.php       ← Controller com as ações do sistema
+│
+├── views/
+│   ├── listar.php               ← Tela de listagem dos jogos
+│   ├── cadastrar.php            ← Formulário de cadastro
+│   ├── editar.php               ← Formulário de edição
+│   └── mensagem.php             ← Componente de alertas
+│
+└── public/
+    ├── css/
+    │   └── bootstrap.min.css    ← Estilização Bootstrap
+    └── js/
+        └── bootstrap.bundle.min.js
+```
+
+---
+
+## ⚙️ Tecnologias Utilizadas
+
+- PHP 8+
+- MySQL
+- PDO (PHP Data Objects)
+- Bootstrap 5
+- HTML5
+- XAMPP
+
+---
+
+## 🗄️ Banco de Dados
+
+A tabela `jogos` contém os seguintes campos:
+
+| Campo | Tipo | Descrição |
+|---|---|---|
+| id | INT AUTO_INCREMENT | Chave primária |
+| nome | VARCHAR(150) | Nome do jogo |
+| plataforma | VARCHAR(60) | Plataforma (PC, PS5...) |
+| genero | VARCHAR(60) | Gênero do jogo |
+| ano | YEAR | Ano de lançamento |
+| preco | DECIMAL(8,2) | Preço do jogo |
+
+---
+
+## 🚀 Como Executar
+
+**1.** Clone ou copie a pasta do projeto para:
+```
+C:\xampp\htdocs\ProjetoJogoPHP
+```
+
+**2.** Inicie o **Apache** e o **MySQL** no XAMPP
+
+**3.** Abra o **phpMyAdmin** em `http://localhost/phpmyadmin`
+
+**4.** Execute o conteúdo do arquivo `banco.sql` para criar o banco e a tabela
+
+**5.** Acesse no navegador:
+```
+http://localhost/ProjetoJogoPHP/index.php
+```
+
+---
+
+## ✅ Funcionalidades
+
+- [x] Listar todos os jogos
+- [x] Cadastrar novo jogo
+- [x] Editar jogo existente
+- [x] Excluir jogo
+- [x] Mensagens de sucesso e erro
+- [x] Navegação entre páginas
+
+---
+
+## 📐 Arquitetura MVC
+
+| Camada | Arquivo | Responsabilidade |
+|---|---|---|
+| Model | `Jogo.php` | Comunicação com o banco de dados |
+| View | `views/*.php` | Exibição das telas para o usuário |
+| Controller | `JogoController.php` | Controle das ações e regras |
